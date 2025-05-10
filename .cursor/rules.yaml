@@ -2,6 +2,14 @@ version: 1.0
 
 # 결제 시스템 시뮬레이터 (PaymentSimulator-Kotlin) Cursor Rules
 
+# TDD 규칙
+tdd_rules:
+  enabled: true
+  test_first: true          # 테스트 우선 작성
+  test_coverage: 80         # 최소 테스트 커버리지 80%
+  test_naming: "should_*"   # 테스트 메소드 네이밍 컨벤션
+  test_structure: "given_when_then"  # 테스트 구조
+
 # 코드 스타일 규칙
 style_rules:
   kotlin:
@@ -32,6 +40,9 @@ project_structure:
     - src/main/kotlin/com/donait/paymentsimulator/util        # 유틸리티
     - src/main/resources                                      # 리소스
     - src/test/kotlin/com/donait/paymentsimulator             # 테스트
+    - src/test/kotlin/com/donait/paymentsimulator/integration  # 통합 테스트
+    - src/test/resources                                      # 테스트 리소스
+    - src/test/resources/test-data                           # 테스트 데이터
 
 # 파일 네이밍 규칙
 file_naming:
@@ -124,12 +135,80 @@ code_templates:
         data class $NAME$Dto(
             // TODO: DTO 필드 추가
         )
+    
+    test:
+      template: |
+        package com.donait.paymentsimulator
+
+        import org.junit.jupiter.api.*
+        import org.mockito.Mockito.*
+        import org.springframework.boot.test.context.SpringBootTest
+        import org.springframework.boot.test.mock.mockito.MockBean
+        import org.springframework.test.context.ActiveProfiles
+
+        @SpringBootTest
+        @ActiveProfiles("test")
+        class $NAME$Test {
+            
+            @MockBean
+            private lateinit var $name$Service: $NAME$Service
+            
+            @BeforeEach
+            fun setup() {
+                // 테스트 설정
+            }
+            
+            @Test
+            fun `should_*`() {
+                // given
+                
+                // when
+                
+                // then
+            }
+        }
+    
+    integration_test:
+      template: |
+        package com.donait.paymentsimulator
+
+        import org.junit.jupiter.api.*
+        import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
+        import org.springframework.boot.test.context.SpringBootTest
+        import org.springframework.test.context.ActiveProfiles
+        import org.springframework.test.web.servlet.MockMvc
+        import org.springframework.beans.factory.annotation.Autowired
+
+        @SpringBootTest
+        @AutoConfigureMockMvc
+        @ActiveProfiles("test")
+        class $NAME$IntegrationTest {
+            
+            @Autowired
+            private lateinit var mockMvc: MockMvc
+            
+            @BeforeEach
+            fun setup() {
+                // 통합 테스트 설정
+            }
+            
+            @Test
+            fun `should_*`() {
+                // given
+                
+                // when
+                
+                // then
+            }
+        }
 
 # CI/CD 통합 설정
 ci_cd:
   build_command: "./gradlew build"
   test_command: "./gradlew test"
   lint_command: "./gradlew ktlintCheck"
+  test_coverage_command: "./gradlew jacocoTestReport"  # 테스트 커버리지 리포트 생성
+  test_coverage_threshold: 80  # 테스트 커버리지 임계값
 
 # 로깅 및 디버깅 설정
 logging:
@@ -148,3 +227,12 @@ formatting:
 file_rules:
   encoding: UTF-8           # 파일 인코딩 UTF-8
   line_ending: LF           # 줄 끝 문자 LF (Line Feed)
+
+# 테스트 관련 설정
+test_config:
+  kotlin:
+    test_framework: "junit5"           # JUnit 5 사용
+    mock_framework: "mockito"          # Mockito 사용
+    assertion_library: "assertj"       # AssertJ 사용
+    test_profiles: ["test", "integration"]  # 테스트 프로필
+    test_data_location: "src/test/resources/test-data"  # 테스트 데이터 위치

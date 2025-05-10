@@ -1,0 +1,14 @@
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mAccountIntegrationTest.kt[90m:[0m1[90m:1:[0m File must end with a newline (\n)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mAccountIntegrationTest.kt[90m:[0m1[90m:1:[0m Trailing space(s)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mAccountIntegrationTest.kt[90m:[0m1[90m:1:[0m Unexpected indentation (1) (should be 0)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mAuthIntegrationTest.kt[90m:[0m1[90m:1:[0m File must end with a newline (\n)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mAuthIntegrationTest.kt[90m:[0m1[90m:1:[0m Trailing space(s)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mAuthIntegrationTest.kt[90m:[0m1[90m:1:[0m Unexpected indentation (1) (should be 0)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mPaymentIntegrationTest.kt[90m:[0m1[90m:1:[0m File must end with a newline (\n)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mPaymentIntegrationTest.kt[90m:[0m1[90m:1:[0m Trailing space(s)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\integration\[0mPaymentIntegrationTest.kt[90m:[0m1[90m:1:[0m Unexpected indentation (1) (should be 0)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\service\[0mPaymentServiceTest.kt[90m:[0m1[90m:1:[0m File must end with a newline (\n)
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\service\[0mPaymentServiceTest.kt[90m:[0m3[90m:1:[0m Imports must be ordered in lexicographic order without any empty lines in-between with "java", "javax", "kotlin" and aliases in the end
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\service\[0mPaymentServiceTest.kt[90m:[0m5[90m:1:[0m Unused import
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\service\[0mPaymentServiceTest.kt[90m:[0m14[90m:1:[0m Wildcard import
+[90mC:\exkeys\src\test\kotlin\com\donait\paymentsimulator\service\[0mPaymentServiceTest.kt[90m:[0m112[90m:2:[0m Trailing space(s)
