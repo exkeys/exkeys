@@ -51,7 +51,7 @@ class TransactionService(
         val targetAccount = accountRepository.findByAccountNumber(transaction.targetAccountNumber)
             .orElseThrow { NoSuchElementException("입금 계좌를 찾을 수 없습니다: ${transaction.targetAccountNumber}") }
 
-        if (sourceAccount.balance < transaction.amount) {
+        if (sourceAccount.balance.compareTo(transaction.amount) < 0) {
             transaction.status = TransactionStatus.FAILED
             transaction.updatedAt = LocalDateTime.now()
             transactionRepository.save(transaction)
